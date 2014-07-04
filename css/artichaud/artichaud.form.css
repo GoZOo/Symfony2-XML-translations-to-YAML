@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Sommaire
+
+   1 = Form
+   2 = Input radio + checkbox
+   ========================================================================== */
+
+fieldset {
+  background: #EEE;
+  border:0;
+  margin: 1em 0;
+}
+
+  fieldset legend {
+    display: block;
+    position: relative;
+    font-style: italic;
+    color: #666;
+  }
+
+select, .form-text, textarea {
+  border: 1px solid #DDD;
+  padding: 0.5em 0.8em;
+}
+
+/* ==========================================================================
+   Input radio + checkbox
+   ========================================================================== */
+
+.form-radio,
+.form-checkbox {
+  position: absolute;
+  left: -9999px;
+}
+
+.form-radio + label:before, 
+.form-checkbox + label:before {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  background: #AAA;
+  border: 2px solid #AAA;
+  display: inline-block;
+  margin-right: 0.4em;
+  position: relative;
+  top: 2px;
+}
+
+.form-checkbox:checked + label:before {
+  content: "✓";
+  line-height: 0.7em;
+  color: #666;
+  position: relative;
+  text-indent: 1px;
+  font-size: 1.2em;
+  width: 0.65em;
+  height: 0.63em;
+  top: 0;
+  margin-right: 0.35em;
+  background: #FFF;
+}
+
+.form-radio + label:before { border-radius: 100%; }
+.form-radio:checked + label:before { background: #FFF; }
