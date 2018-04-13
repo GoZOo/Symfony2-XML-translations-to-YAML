@@ -25,8 +25,22 @@
   <div class="inner">
     <h1>Convert XML (xlf) Symfony2 translations files to YAML</h1>
 
+    <div>
+      <span>Which type of Yaml representation do you want to use ?</span>
+      <label>Multiple Level
+        <input type="radio" ng-model="method" value="multiple_level" ng-change="convert()" checked="checked" />
+      </label>
+      <label>Flatten
+        <input type="radio" ng-model="method" value="flatten" ng-change="convert()" />
+      </label>
+    </div>
+
     <label for="toConvert">Paste XML content to convert :</label>
     <textarea id="toConvert" name="toConvert" ng-model="toConvert" ng-change="convert()"></textarea>
+
+    <button type="reset" ng-click="reset()">Reset</button>
+
+    <div ng-show="use_flatten" class="warning ng-hide">Some source keys don't allow to use multiple level. Automatically switch to flatten display.</div>
 
     <label for="converted">YAML Result :</label>
     <textarea id="converted" name="converted" ng-model="converted" readonly>
