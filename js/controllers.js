@@ -84,5 +84,6 @@ xmlYmlConvertApp.controller('TextToConverCtrl', function($scope) {
     $scope.converted = '';
     $scope.ymlObject = {};
     $scope.domElementToConvert = {};
+    $scope.use_flatten = false;
   }
 });
